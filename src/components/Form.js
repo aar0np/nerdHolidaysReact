@@ -26,13 +26,13 @@ class Form extends Component {
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept': 'application/json',
-				'X-Cassandra-Token': 'AstraCS:SaAhbKerPiSCjuSmhbYzIPtf:442b15c1fedf430ffcc909ceea10a42e53d7bf7c179469614b1b69c1791fd6da'
+				'X-Cassandra-Token': process.env.REACT_APP_ASTRA_DB_TOKEN
 			}
 		}
 
 		// submit year to endpoint
 		axios
-			.get('https://f3a624eb-5e69-40d1-928a-58a84581368f-us-east1.apps.astra.datastax.com/api/rest/v2/keyspaces/live_coding/nerd_holidays/' + this.state.year, config)
+			.get('https://' + process.env.REACT_APP_ASTRA_DB_ID + '-' + process.env.REACT_APP_ASTRA_DB_REGION + '.apps.astra.datastax.com/api/rest/v2/keyspaces/live_coding/nerd_holidays/' + this.state.year, config)
 			.then(response => {
 				this.setState({eventdata: response.data.data})
 				console.log(this.state.eventdata)

@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  /* background-color: #282c34; */
+
 }
 
 .App-logo {
@@ -13,8 +15,15 @@
   }
 }
 
+.title {
+  color: 282c34;
+}  
+
+.label {
+  color: purple;
+}
+
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

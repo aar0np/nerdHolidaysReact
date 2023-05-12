@@ -101,6 +101,16 @@ REACT_APP_ASTRA_DB_REGION=<your-astra-db-region>
 REACT_APP_ASTRA_DB_TOKEN=<your-astra-db-token>
 ```
 
+## React.js dependencies
+
+Be sure to install the following npm packages:
+
+```
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/x-data-grid
+npm install axios
+```
+
 ## Available Scripts
 
 In the project directory, you can run:

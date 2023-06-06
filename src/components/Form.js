@@ -44,7 +44,7 @@ class Form extends Component {
 
 	render() {
 		const columns: GridColDef[] = [
-		  { field: 'id', headerName: 'id', width: 100 },
+		  { field: 'id', headerName: 'id', width: 150 },
 		  { field: 'name', headerName: 'Name', width: 250 },
 		  { field: 'event_date', headerName: 'Event Date', width: 100 }
 		];

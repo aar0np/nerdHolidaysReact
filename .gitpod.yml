@@ -1,0 +1,30 @@
+image:
+  file: .gitpod.Dockerfile
+tasks:
+  - name: setup
+    before: |
+      # REMOVE USER VALIDATION -Y ON JAVA 17 INSTALLATION
+      sed -i '1,$s/sdkman_auto_answer=false/sdkman_auto_answer=true/' /home/gitpod/.sdkman/etc/config
+      sed -i '1,$s/sdkman_selfupdate_enable=true/sdkman_selfupdate_enable=false/' /home/gitpod/.sdkman/etc/config
+      
+      # JAVA 17 INSTALL
+      sdk install java
+
+      mvn install -f backend/pom.xml -DskipTests
+      npm --prefix ui install
+      npm --prefix ui run build
+      npm install @emotion/react
+      npm install @emotion/styled
+      npm install @mui/material
+      npm install @mui/x-data-grid
+      npm install axios
+      curl -Ls "https://dtsx.io/get-astra-cli" | bash >> ./install.log
+    command: |
+      gp open README.md
+      unset JAVA_TOOL_OPTIONS
+      source /home/gitpod/.astra/cli/astra-init.sh
+      # astra setup
+ports:
+  - port: 8080
+    onOpen: open-browser
+    visibility: public

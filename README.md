@@ -85,6 +85,10 @@ INSERT INTO nerd_holidays (year_bucket, event_date, id, name)
 VALUES (2023,20231221,UUID(),'Rush 2112 Day');
 ```
 
+## GitPod ##
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/datastaxdevs/workshop-ecommerce-app)
+
 ## Environment file
 
 You will need to build a `.env` file in the project's root directory for it to know how to connect to Astra DB.  There is an `.env_sample` file included to help you with this.  Just rename that file to be your new `.env`, edit your values, and you're all set:
